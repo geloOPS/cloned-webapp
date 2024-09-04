@@ -1,261 +1,70 @@
-import React, { useEffect, useState } from 'react';
+import React from "react";
+import Ads from "src/components/AdsContainer";
+import Card from "src/components/Card";
+import ImageCarousel from "src/components/carousel";
+import Gallery from "src/components/Gallery";
+import HeroComponent from "src/components/hero";
 
 const Homepage: React.FC = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const hero = {
+    text: "Welcome to Tabing Kanto Singapore!",
+    subText: "Your Essential Hub for Filipinos in Singapore!",
+  };
 
-  useEffect(() => {
-    const carousel = document.querySelector('[data-carousel="slide"]');
-    const items = carousel?.querySelectorAll('[data-carousel-item]');
-    const prevButton = carousel?.querySelector('[data-carousel-prev]');
-    const nextButton = carousel?.querySelector('[data-carousel-next]');
+  const images = [
+    "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?cs=srgb&dl=pexels-kin-pastor-251088-777059.jpg&fm=jpg",
+    "https://cdn.britannica.com/55/190455-050-E617F64E/Night-view-Singapore.jpg",
+    "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/il7jc87wZ_o8/v0/-1x-1.jpg",
+    "https://entiretravel.imgix.net/getmedia/adf63348-5ed2-4c9c-b2ac-543b5570013e/Jewel-HSBC-Rain-Vortex-at-Night_1500x780.jpg?auto=format",
+    "https://www.thoughtco.com/thmb/C1Nbj1M6jZK9Xm_lgD1ndDPPAk4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/singapore--garden-by-the-bay--supertree-grove-638256268-fa59e7e78b6449aaa40f68eafe6ff1a1.jpg",
+  ];
 
-    function showSlide(index: number) {
-      if (items) {
-        items.forEach((item, i) => {
-          item.classList.toggle('block', i === index);
-          item.classList.toggle('hidden', i !== index);
-        });
-      }
-    }
+  const cards = [
+    {
+      title: "Building with Tailwind CSS",
+      description:
+        "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.",
+      linkText: "Read more",
+      linkUrl: "#",
+    },
+    {
+      title: "Start with Flowbite Design System",
+      description:
+        "Static websites are now used to bootstrap lots of websites and are becoming the basis for a variety of tools that even influence both web designers and developers.",
+      linkText: "Read more",
+      linkUrl: "#",
+    },
+  ];
 
-    function showNextSlide() {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % (items ? items.length : 1));
-    }
-
-    function showPrevSlide() {
-      setCurrentIndex((prevIndex) => (prevIndex - 1 + (items ? items.length : 1)) % (items ? items.length : 1));
-    }
-
-    if (nextButton) {
-      nextButton.addEventListener('click', showNextSlide);
-    }
-
-    if (prevButton) {
-      prevButton.addEventListener('click', showPrevSlide);
-    }
-
-    // Automatically change slide every 2 seconds
-    const intervalId = setInterval(showNextSlide, 2000);
-
-    // Show the initial slide
-    showSlide(currentIndex);
-
-    // Cleanup interval and event listeners on component unmount
-    return () => {
-      clearInterval(intervalId);
-      if (nextButton) {
-        nextButton.removeEventListener('click', showNextSlide);
-      }
-      if (prevButton) {
-        prevButton.removeEventListener('click', showPrevSlide);
-      }
-    };
-  }, [currentIndex]);
-
-  useEffect(() => {
-    // Update the displayed slide whenever `currentIndex` changes
-    const carousel = document.querySelector('[data-carousel="slide"]');
-    const items = carousel?.querySelectorAll('[data-carousel-item]');
-    if (items) {
-      items.forEach((item, i) => {
-        item.classList.toggle('block', i === currentIndex);
-        item.classList.toggle('hidden', i !== currentIndex);
-      });
-    }
-  }, [currentIndex]);
   return (
-    <section className="flex-1 h-full bg-[#b1d4e0]">
-      <div className="px-4 py-10 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-32">
-        {/* Main Content Section */}
-        <div className="flex-1">
-        <div className="bg-[#81b673] border border-gray-200 rounded-lg p-8 md:p-6 mb-8">
-          <h1 className="text-gray-900 text-3xl md:text-5xl font-extrabold mb-2 text-center">  
-            Welcome to Tabing Kanto Singapore!  
-          </h1>
-          <p className="text-lg font-normal text-gray-500 mb-6 text-center">
-            Your Essential Hub for Filipinos in Singapore!
-          </p>
-        </div>
-          <div
-            id="carousel"
-            className="relative w-full h-56 md:h-96 mb-8"
-            data-carousel="slide"
-          >
-            <div className="relative h-full overflow-hidden rounded-lg">
-              {[
-                "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?cs=srgb&dl=pexels-kin-pastor-251088-777059.jpg&fm=jpg",
-                "https://cdn.britannica.com/55/190455-050-E617F64E/Night-view-Singapore.jpg",
-                "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/il7jc87wZ_o8/v0/-1x-1.jpg",
-                "https://entiretravel.imgix.net/getmedia/adf63348-5ed2-4c9c-b2ac-543b5570013e/Jewel-HSBC-Rain-Vortex-at-Night_1500x780.jpg?auto=format",
-                "https://www.thoughtco.com/thmb/C1Nbj1M6jZK9Xm_lgD1ndDPPAk4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/singapore--garden-by-the-bay--supertree-grove-638256268-fa59e7e78b6449aaa40f68eafe6ff1a1.jpg",
-              ].map((image, index) => (
-                <div
-                  key={index}
-                  className={`hidden duration-700 ease-in-out ${
-                    index === 0 ? "block" : ""
-                  }`}
-                  data-carousel-item={index === 0 ? "active" : ""}
-                >
-                  <img
-                    src={image}
-                    className="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-                    alt={`Slide ${index + 1}`}
-                  />
-                </div>
-              ))}
-            </div>
-            <button
-              type="button"
-              className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-prev
-            >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M5 1 1 5l4 4"
-                  />
-                </svg>
-                <span className="sr-only">Previous</span>
-              </span>
-            </button>
-            <button
-              type="button"
-              className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-              data-carousel-next
-            >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
-                <svg
-                  className="w-4 h-4 text-white rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 6 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="m1 9 4-4-4-4"
-                  />
-                </svg>
-                <span className="sr-only">Next</span>
-              </span>
-            </button>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-[#81b673] border-gray-200 rounded-lg p-8 md:p-12">
-              <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
-                Start with Flowbite Design System
-              </h2>
-              <p className="text-lg font-normal text-gray-500 mb-4">
-                Static websites are now used to bootstrap lots of websites and
-                are becoming the basis for a variety of tools that even
-                influence both web designers and developers.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
-              >
-                Read more
-                <svg
-                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div className="bg-[#81b673] border-gray-200 rounded-lg p-8 md:p-12">
-              <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
-                Building with Tailwind CSS
-              </h2>
-              <p className="text-lg font-normal text-gray-500 mb-4">
-                Static websites are now used to bootstrap lots of websites and
-                are becoming the basis for a variety of tools that even
-                influence both web designers and developers.
-              </p>
-              <a
-                href="#"
-                className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
-              >
-                Learn more
-                <svg
-                  className="w-3.5 h-3.5 ms-2 rtl:rotate-180"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 14 10"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 5h12m0 0L9 1m4 4L9 9"
-                  />
-                </svg>
-              </a>
-            </div>
+    <section className="flex-1">
+      <div className="px-10 pt-10 pb-4 mx-auto flex flex-col xl:flex-row gap-10">
+        <div className="basis-3/4">
+          <HeroComponent heroText={hero.text} heroSubtext={hero.subText} />
+          <ImageCarousel
+            images={images}
+            autoSlide={true}
+            autoSlideInterval={5000}
+          />
+          <div className="grid md:grid-cols-2 gap-8 pt-8">
+            {cards.map((card, index) => (
+              <Card
+                key={index}
+                title={card.title}
+                description={card.description}
+                linkText={card.linkText}
+                linkUrl={card.linkUrl}
+              />
+            ))}
           </div>
         </div>
-
-        {/* Gallery Section */}
-        <div className="w-full h-fit md:w-1/3 bg-[#ffc0cb] border border-gray-200 rounded-lg p-4 md:p-8 gap-4">
-          <h2 className="text-gray-900 text-2xl font-extrabold mb-4">
-            Quick Links
-          </h2>
-          <div className="grid grid-cols-2 gap-2">
-            <div className="flex items-center justify-center">
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg"
-                alt="Gallery Image 1"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg"
-                alt="Gallery Image 2"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg"
-                alt="Gallery Image 3"
-              />
-            </div>
-            <div className="flex items-center justify-center">
-              <img
-                className="h-auto max-w-full rounded-lg"
-                src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg"
-                alt="Gallery Image 4"
-              />
-            </div>
+        <div className="basis-1/4">
+          <div className="flex flex-col gap-8">
+            <Gallery />
+            <Ads />
           </div>
-            </div>
         </div>
+      </div>
     </section>
   );
 };
