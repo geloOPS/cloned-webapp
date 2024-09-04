@@ -33,7 +33,9 @@ const Navbar: React.FC = () => {
         {/* Logo and title */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">  
           <img src="/tblogo.png" className="h-20 w-20" alt="Logo" />  
-          <span className="text-2xl font-semibold whitespace-nowrap">Tabing Kanto Singapore</span>  
+          <span className="text-2xl font-semibold whitespace-nowrap" style={{ fontFamily: 'TheBoldFont' }}>  
+              Tabing Kanto Singapore  
+          </span>
         </a>
 
         {/* Spacer */}
