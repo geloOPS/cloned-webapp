@@ -1,6 +1,68 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Homepage: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const carousel = document.querySelector('[data-carousel="slide"]');
+    const items = carousel?.querySelectorAll('[data-carousel-item]');
+    const prevButton = carousel?.querySelector('[data-carousel-prev]');
+    const nextButton = carousel?.querySelector('[data-carousel-next]');
+
+    function showSlide(index: number) {
+      if (items) {
+        items.forEach((item, i) => {
+          item.classList.toggle('block', i === index);
+          item.classList.toggle('hidden', i !== index);
+        });
+      }
+    }
+
+    function showNextSlide() {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % (items ? items.length : 1));
+    }
+
+    function showPrevSlide() {
+      setCurrentIndex((prevIndex) => (prevIndex - 1 + (items ? items.length : 1)) % (items ? items.length : 1));
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener('click', showNextSlide);
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener('click', showPrevSlide);
+    }
+
+    // Automatically change slide every 2 seconds
+    const intervalId = setInterval(showNextSlide, 2000);
+
+    // Show the initial slide
+    showSlide(currentIndex);
+
+    // Cleanup interval and event listeners on component unmount
+    return () => {
+      clearInterval(intervalId);
+      if (nextButton) {
+        nextButton.removeEventListener('click', showNextSlide);
+      }
+      if (prevButton) {
+        prevButton.removeEventListener('click', showPrevSlide);
+      }
+    };
+  }, [currentIndex]);
+
+  useEffect(() => {
+    // Update the displayed slide whenever `currentIndex` changes
+    const carousel = document.querySelector('[data-carousel="slide"]');
+    const items = carousel?.querySelectorAll('[data-carousel-item]');
+    if (items) {
+      items.forEach((item, i) => {
+        item.classList.toggle('block', i === currentIndex);
+        item.classList.toggle('hidden', i !== currentIndex);
+      });
+    }
+  }, [currentIndex]);
   return (
     <section className="flex-1 h-full bg-white dark:bg-gray-900">
       <div className="px-4 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-8">
@@ -104,8 +166,8 @@ const Homepage: React.FC = () => {
                 <img className="h-auto max-w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" alt="Gallery Image 4" />
                 </div>
             </div>
+            </div>
         </div>
-      </div>
     </section>
   );
 };
