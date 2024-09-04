@@ -29,11 +29,11 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="bg-white border-gray-200">
-      <div className="flex items-center justify-between mx-auto p-4">
+      <div className="flex items-center justify-between mx-auto">
         {/* Logo and title */}
-        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://flowbite.com/docs/images/logo.svg" className="h-8" alt="Logo" />
-          <span className="text-2xl font-semibold whitespace-nowrap">Flowbite</span>
+        <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">  
+          <img src="/tblogo.png" className="h-20 w-20" alt="Logo" />  
+          <span className="text-2xl font-semibold whitespace-nowrap">Tabing Kanto Singapore</span>  
         </a>
 
         {/* Spacer */}

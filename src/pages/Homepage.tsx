@@ -65,7 +65,7 @@ const Homepage: React.FC = () => {
   }, [currentIndex]);
   return (
     <section className="flex-1 h-full bg-white">
-      <div className="px-4 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-8">
+      <div className="px-4 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-32">
         {/* Main Content Section */}
         <div className="flex-1">
           <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 mb-8">
