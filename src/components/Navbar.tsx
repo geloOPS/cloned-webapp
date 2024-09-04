@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
   }, [isDropdownOpen]);
 
   return (
-    <nav className="bg-white border-gray-200">
+    <nav className="bg-[#bc1823] border-gray-200">
       <div className="flex items-center justify-between mx-auto">
         {/* Logo and title */}
         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">  

@@ -64,18 +64,18 @@ const Homepage: React.FC = () => {
     }
   }, [currentIndex]);
   return (
-    <section className="flex-1 h-full bg-white">
-      <div className="px-4 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-32">
+    <section className="flex-1 h-full bg-[#b1d4e0]">
+      <div className="px-4 py-10 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-32">
         {/* Main Content Section */}
         <div className="flex-1">
-          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-6 mb-8">
+        <div className="bg-[#81b673] border border-gray-200 rounded-lg p-8 md:p-6 mb-8">
           <h1 className="text-gray-900 text-3xl md:text-5xl font-extrabold mb-2 text-center">  
-              Welcome to Tabing Kanto Singapore!  
+            Welcome to Tabing Kanto Singapore!  
           </h1>
-            <p className="text-lg font-normal text-gray-500 mb-6 text-center">
-            Your Essential Hub for Filipinos in Singapore!"
-            </p>
-          </div>
+          <p className="text-lg font-normal text-gray-500 mb-6 text-center">
+            Your Essential Hub for Filipinos in Singapore!
+          </p>
+        </div>
           <div
             id="carousel"
             className="relative w-full h-56 md:h-96 mb-8"
@@ -154,22 +154,7 @@ const Homepage: React.FC = () => {
             </button>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 border-gray-200 rounded-lg p-8 md:p-12">
-              <a
-                href="#"
-                className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
-              >
-                <svg
-                  className="w-2.5 h-2.5 me-1.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 18"
-                >
-                  <path d="M17 11h-2.722L8 17.278a5.512 5.512 0 0 1-.9.722H17a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1ZM6 0H1a1 1 0 0 0-1 1v13.5a3.5 3.5 0 1 0 7 0V1a1 1 0 0 0-1-1ZM3.5 15.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM16.132 4.9 12.6 1.368a1 1 0 0 0-1.414 0L9 3.55v9.9l7.132-7.132a1 1 0 0 0 0-1.418Z" />
-                </svg>
-                Design
-              </a>
+            <div className="bg-[#81b673] border-gray-200 rounded-lg p-8 md:p-12">
               <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
                 Start with Flowbite Design System
               </h2>
@@ -200,22 +185,7 @@ const Homepage: React.FC = () => {
                 </svg>
               </a>
             </div>
-            <div className="bg-gray-50 border-gray-200 rounded-lg p-8 md:p-12">
-              <a
-                href="#"
-                className="bg-red-100 text-red-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
-              >
-                <svg
-                  className="w-2.5 h-2.5 me-1.5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 18 18"
-                >
-                  <path d="M15 0H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2ZM6.5 2a.5.5 0 0 1 .5.5V4h3V2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5V4h2V2.5a.5.5 0 0 1 .5-.5h.5a.5.5 0 0 1 .5.5V8h-2V7a1 1 0 1 0-2 0v1H8V7a1 1 0 1 0-2 0v1H6V2.5a.5.5 0 0 1 .5-.5ZM7.5 11.5h5a.5.5 0 0 1 .5.5V14h-6v-1a.5.5 0 0 1 .5-.5ZM12.5 16h-7v-1h7v1ZM15 14H8v-2h7v2ZM7 10h1V7H7v3Zm5 0h1V7h-1v3Zm-4 0h1V7H8v3Z" />
-                </svg>
-                Code
-              </a>
+            <div className="bg-[#81b673] border-gray-200 rounded-lg p-8 md:p-12">
               <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
                 Building with Tailwind CSS
               </h2>
@@ -250,9 +220,9 @@ const Homepage: React.FC = () => {
         </div>
 
         {/* Gallery Section */}
-        <div className="w-full h-fit md:w-1/3 bg-gray-50 border border-gray-200 rounded-lg p-4 md:p-8 gap-4">
+        <div className="w-full h-fit md:w-1/3 bg-[#ffc0cb] border border-gray-200 rounded-lg p-4 md:p-8 gap-4">
           <h2 className="text-gray-900 text-2xl font-extrabold mb-4">
-            Gallery
+            Quick Links
           </h2>
           <div className="grid grid-cols-2 gap-2">
             <div className="flex items-center justify-center">
