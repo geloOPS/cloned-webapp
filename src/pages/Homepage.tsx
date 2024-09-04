@@ -64,14 +64,14 @@ const Homepage: React.FC = () => {
     }
   }, [currentIndex]);
   return (
-    <section className="flex-1 h-full bg-white dark:bg-gray-900">
+    <section className="flex-1 h-full bg-white">
       <div className="px-4 pb-4 mx-auto max-w-screen-xl flex flex-col md:flex-row gap-8">
         {/* Main Content Section */}
         <div className="flex-1">
-          <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12 mb-8">
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-8 md:p-12 mb-8">
             <a
               href="#"
-              className="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-blue-400 mb-2"
+              className="bg-blue-100 text-blue-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
             >
               <svg
                 className="w-2.5 h-2.5 me-1.5"
@@ -84,17 +84,17 @@ const Homepage: React.FC = () => {
               </svg>
               Tutorial
             </a>
-            <h1 className="text-gray-900 dark:text-white text-3xl md:text-5xl font-extrabold mb-2">
+            <h1 className="text-gray-900 text-3xl md:text-5xl font-extrabold mb-2">
               How to quickly deploy a static website
             </h1>
-            <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-6">
+            <p className="text-lg font-normal text-gray-500 mb-6">
               Static websites are now used to bootstrap lots of websites and are
               becoming the basis for a variety of tools that even influence both
               web designers and developers.
             </p>
             <a
               href="#"
-              className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+              className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300"
             >
               Read more
               <svg
@@ -121,11 +121,11 @@ const Homepage: React.FC = () => {
           >
             <div className="relative h-full overflow-hidden rounded-lg">
               {[
-                "https://images.pexels.com/photos/1704120/pexels-photo-1704120.jpeg",
-                "https://images.pexels.com/photos/2120150/pexels-photo-2120150.jpeg",
-                "https://images.pexels.com/photos/276040/pexels-photo-276040.jpeg",
-                "https://images.pexels.com/photos/3709891/pexels-photo-3709891.jpeg",
-                "https://images.pexels.com/photos/3995861/pexels-photo-3995861.jpeg",
+                "https://images.pexels.com/photos/777059/pexels-photo-777059.jpeg?cs=srgb&dl=pexels-kin-pastor-251088-777059.jpg&fm=jpg",
+                "https://cdn.britannica.com/55/190455-050-E617F64E/Night-view-Singapore.jpg",
+                "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/il7jc87wZ_o8/v0/-1x-1.jpg",
+                "https://entiretravel.imgix.net/getmedia/adf63348-5ed2-4c9c-b2ac-543b5570013e/Jewel-HSBC-Rain-Vortex-at-Night_1500x780.jpg?auto=format",
+                "https://www.thoughtco.com/thmb/C1Nbj1M6jZK9Xm_lgD1ndDPPAk4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/singapore--garden-by-the-bay--supertree-grove-638256268-fa59e7e78b6449aaa40f68eafe6ff1a1.jpg",
               ].map((image, index) => (
                 <div
                   key={index}
@@ -147,9 +147,9 @@ const Homepage: React.FC = () => {
               className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
               data-carousel-prev
             >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                 <svg
-                  className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  className="w-4 h-4 text-white rtl:rotate-180"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -171,9 +171,9 @@ const Homepage: React.FC = () => {
               className="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
               data-carousel-next
             >
-              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+              <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
                 <svg
-                  className="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                  className="w-4 h-4 text-white rtl:rotate-180"
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -192,10 +192,10 @@ const Homepage: React.FC = () => {
             </button>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+            <div className="bg-gray-50 border-gray-200 rounded-lg p-8 md:p-12">
               <a
                 href="#"
-                className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-green-400 mb-2"
+                className="bg-green-100 text-green-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
               >
                 <svg
                   className="w-2.5 h-2.5 me-1.5"
@@ -208,17 +208,17 @@ const Homepage: React.FC = () => {
                 </svg>
                 Design
               </a>
-              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
+              <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
                 Start with Flowbite Design System
               </h2>
-              <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+              <p className="text-lg font-normal text-gray-500 mb-4">
                 Static websites are now used to bootstrap lots of websites and
                 are becoming the basis for a variety of tools that even
                 influence both web designers and developers.
               </p>
               <a
                 href="#"
-                className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
+                className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
               >
                 Read more
                 <svg
@@ -238,10 +238,10 @@ const Homepage: React.FC = () => {
                 </svg>
               </a>
             </div>
-            <div className="bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-8 md:p-12">
+            <div className="bg-gray-50 border-gray-200 rounded-lg p-8 md:p-12">
               <a
                 href="#"
-                className="bg-red-100 text-red-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md dark:bg-gray-700 dark:text-red-400 mb-2"
+                className="bg-red-100 text-red-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded-md mb-2"
               >
                 <svg
                   className="w-2.5 h-2.5 me-1.5"
@@ -254,17 +254,17 @@ const Homepage: React.FC = () => {
                 </svg>
                 Code
               </a>
-              <h2 className="text-gray-900 dark:text-white text-3xl font-extrabold mb-2">
+              <h2 className="text-gray-900 text-3xl font-extrabold mb-2">
                 Building with Tailwind CSS
               </h2>
-              <p className="text-lg font-normal text-gray-500 dark:text-gray-400 mb-4">
+              <p className="text-lg font-normal text-gray-500 mb-4">
                 Static websites are now used to bootstrap lots of websites and
                 are becoming the basis for a variety of tools that even
                 influence both web designers and developers.
               </p>
               <a
                 href="#"
-                className="text-blue-600 dark:text-blue-500 hover:underline font-medium text-lg inline-flex items-center"
+                className="text-blue-600 hover:underline font-medium text-lg inline-flex items-center"
               >
                 Learn more
                 <svg
@@ -288,8 +288,8 @@ const Homepage: React.FC = () => {
         </div>
 
         {/* Gallery Section */}
-        <div className="w-full h-fit md:w-1/3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg p-4 md:p-8 gap-4">
-          <h2 className="text-gray-900 dark:text-white text-2xl font-extrabold mb-4">
+        <div className="w-full h-fit md:w-1/3 bg-gray-50 border border-gray-200 rounded-lg p-4 md:p-8 gap-4">
+          <h2 className="text-gray-900 text-2xl font-extrabold mb-4">
             Gallery
           </h2>
           <div className="grid grid-cols-2 gap-2">
