@@ -36,6 +36,41 @@ const ZoomControl: React.FC = () => {
   return null;
 };
 
+const churchList = [
+  { lat: 1.3100, lon: 103.8414, name: "Blessed Sacrament Church" },
+  { lat: 1.2975, lon: 103.8420, name: "Cathedral of the Good Shepherd" },
+  { lat: 1.2991, lon: 103.8270, name: "Christ the King" },
+  { lat: 1.2903, lon: 103.8388, name: "Divine Mercy" },
+  { lat: 1.2972, lon: 103.8483, name: "Holy Cross" },
+  { lat: 1.3101, lon: 103.8524, name: "Holy Family" },
+  { lat: 1.3103, lon: 103.8476, name: "Holy Spirit" },
+  { lat: 1.2928, lon: 103.8361, name: "Holy Trinity" },
+  { lat: 1.3106, lon: 103.8473, name: "Immaculate Heart of Mary" },
+  { lat: 1.3030, lon: 103.8360, name: "Lady of Lourdes" },
+  { lat: 1.2922, lon: 103.8428, name: "Nativity of the Blessed Virgin Mary" },
+  { lat: 1.2919, lon: 103.8291, name: "Our Lady Queen of Peace" },
+  { lat: 1.2878, lon: 103.8260, name: "Our Lady Star of the Sea" },
+  { lat: 1.3006, lon: 103.8407, name: "Our Lady of Perpetual Succour" },
+  { lat: 1.2931, lon: 103.8323, name: "Risen Christ" },
+  { lat: 1.2916, lon: 103.8493, name: "Sacred Heart" },
+  { lat: 1.3082, lon: 103.8424, name: "St Alphonsus(Novena Church)" },
+  { lat: 1.3142, lon: 103.8341, name: "St Anne's Church" },
+  { lat: 1.2956, lon: 103.8259, name: "St Anthony" },
+  { lat: 1.2951, lon: 103.8345, name: "St Bernadette" },
+  { lat: 1.3079, lon: 103.8411, name: "St Francis Xavier" },
+  { lat: 1.3064, lon: 103.8343, name: "St Francis of Assisi" },
+  { lat: 1.3040, lon: 103.8314, name: "St Ignatius" },
+  { lat: 1.3154, lon: 103.8168, name: "St Joseph's Church(Bukit Timah)" },
+  { lat: 1.2989, lon: 103.8450, name: "St Joseph's Church(Victoria Street)" },
+  { lat: 1.2927, lon: 103.8319, name: "St Mary of the Angels" },
+  { lat: 1.2951, lon: 103.8420, name: "St Michael" },
+  { lat: 1.2908, lon: 103.8378, name: "St Stephen" },
+  { lat: 1.2975, lon: 103.8367, name: "St Teresa" },
+  { lat: 1.2932, lon: 103.8303, name: "St Vincent de Paul" },
+  { lat: 1.2940, lon: 103.8322, name: "Sts Peter and Paul" },
+  { lat: 1.3008, lon: 103.8497, name: "Transfiguration" },
+];
+
 const Gallery: React.FC = () => {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
@@ -45,8 +80,8 @@ const Gallery: React.FC = () => {
   const [currencies, setCurrencies] = useState<string[]>([]);
   const [amountSGD, setAmountSGD] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [churches, setChurches] = useState<{ lat: number; lon: number; name: string }[]>([]);
-
+  const [filteredChurches, setFilteredChurches] = useState<{ lat: number; lon: number; name: string }[]>([]);
+  
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -110,34 +145,6 @@ const Gallery: React.FC = () => {
 
   const convertedAmount = exchangeRate ? (amountSGD * exchangeRate).toFixed(2) : "...";
 
-  // Fetch churches from Overpass API
-  useEffect(() => {
-    const fetchChurches = async () => {
-      const overpassQuery = `
-      [out:json];
-      area[name="Singapore"];
-      node["amenity"="place_of_worship"]["religion"="christian"](area);
-      out body;`;
-
-      const url = `https://overpass-api.de/api/interpreter?data=${encodeURIComponent(overpassQuery)}`;
-      
-      try {
-        const response = await fetch(url);
-        const data = await response.json();
-        const churchData = data.elements.map((element: any) => ({
-          lat: element.lat,
-          lon: element.lon,
-          name: element.tags.name || "Unnamed Church",
-        }));
-        setChurches(churchData);
-      } catch (error) {
-        console.error("Error fetching church data:", error);
-      }
-    };
-
-    fetchChurches();
-  }, []);
-
   return (
     <div className="w-full h-fit bg-[#7c3732] rounded-lg p-4 md:p-8 gap-4">
       <h2 className="text-white text-2xl font-extrabold mb-4">Quick Links</h2>
@@ -156,19 +163,19 @@ const Gallery: React.FC = () => {
             SGD Coin Converter
           </div>
         </div>
-        {/* Card 2 */}  
-        <div  
-          className="relative flex items-center justify-center flex-col cursor-pointer"  
-          onClick={() => setShowMapModal(true)} // Open map modal on click  
-        >  
-          <img  
-            className="w-80 h-80 object-cover rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105"  
-            src={churchImage}  
-            alt="Gallery Image 2"  
-          />  
-          <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">  
-            Catholic Churches around Singapore  
-          </div>  
+        {/* Card 2 */}
+        <div
+          className="relative flex items-center justify-center flex-col cursor-pointer"
+          onClick={() => setShowMapModal(true)} // Open map modal on click
+        >
+          <img
+            className="w-80 h-80 object-cover rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105"
+            src={churchImage}
+            alt="Gallery Image 2"
+          />
+          <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+            Catholic Churches around Singapore
+          </div>
         </div>
         {/* Card 3 */}
         <div className="flex items-center justify-center">
@@ -277,7 +284,7 @@ const Gallery: React.FC = () => {
               />
               <ZoomControl />
               {/* Display only churches */}
-              {churches.map((church, idx) => (
+              {churchList.map((church, idx) => (
                 <Marker key={idx} position={[church.lat, church.lon]}>
                   <Popup>{church.name}</Popup>
                 </Marker>
