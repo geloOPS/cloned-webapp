@@ -38,7 +38,7 @@ const Homepage: React.FC = () => {
 
   return (
     <section className="flex-1">
-      <div className="px-10 pt-10 pb-4 mx-auto flex flex-col xl:flex-row gap-10">
+      <div className="px-4 sm:px-6 md:px-10 pt-10 pb-4 mx-auto flex flex-col xl:flex-row gap-10">
         <div className="basis-3/5">
           <HeroComponent heroText={hero.text} heroSubtext={hero.subText} />
           <ImageCarousel

@@ -197,7 +197,7 @@ const Gallery: React.FC = () => {
         >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer"
-            src={groceryImage}
+            src={restoImage}
             alt="Gallery Image 3"
           />
           <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
@@ -211,7 +211,7 @@ const Gallery: React.FC = () => {
         >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer"
-            src={restoImage}
+            src={groceryImage}
             alt="Gallery Image 4"
           />
           <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
@@ -295,8 +295,8 @@ const Gallery: React.FC = () => {
       {/* OpenStreetMap Modal */}
       {showMapModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg w-[90%] md:w-[50%] relative">
-            <h3 className="text-xl font-bold mb-4">Map Location</h3>
+          <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
+            <h3 className="text-xl font-bold mb-4">Church Location</h3>
             <MapContainer
               center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
               zoom={13}
@@ -328,8 +328,8 @@ const Gallery: React.FC = () => {
       {/* Restaurant Map Modal */}
       {showRestaurantMapModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg w-[90%] md:w-[50%] relative">
-            <h3 className="text-xl font-bold mb-4">Map Location</h3>
+          <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
+            <h3 className="text-xl font-bold mb-4">Restaurant Location</h3>
             <MapContainer
               center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
               zoom={13}
@@ -360,8 +360,8 @@ const Gallery: React.FC = () => {
       {/* Grocery Map Modal */}
       {showGroceryMapModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg w-[90%] md:w-[50%] relative">
-            <h3 className="text-xl font-bold mb-4">Map Location</h3>
+          <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
+            <h3 className="text-xl font-bold mb-4">Grocery Store Location</h3>
             <MapContainer
               center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
               zoom={13}
