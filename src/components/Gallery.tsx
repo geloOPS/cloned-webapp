@@ -71,16 +71,29 @@ const churchList = [
   { lat: 1.4067230522027319, lon: 103.90002734038688, name: "Transfiguration" },
 ];
 
+const restaurantList = [
+  { lat: 1.3216215267617406, lon: 103.84158145087599, name: "Lechon Republic Singapore" },
+  // Add more restaurant data here as needed
+];
+
+const groceryList = [
+  { lat: 1.3216215267617406, lon: 103.84158145087599, name: "Lechon Republic Singapore" },
+  // Add more restaurant data here as needed
+];
+
 const Gallery: React.FC = () => {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [showCurrencySelector, setShowCurrencySelector] = useState(false);
   const [showMapModal, setShowMapModal] = useState(false); // State for Map Modal
+  const [showRestaurantMapModal, setShowRestaurantMapModal] = useState(false); // State for Restaurant Map Modal
   const [selectedCurrency, setSelectedCurrency] = useState("PHP");
   const [currencies, setCurrencies] = useState<string[]>([]);
   const [amountSGD, setAmountSGD] = useState<number>(1);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [filteredChurches, setFilteredChurches] = useState<{ lat: number; lon: number; name: string }[]>([]);
+  const [showGroceryMapModal, setShowGroceryMapModal] = useState(false);
+
   
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -178,20 +191,32 @@ const Gallery: React.FC = () => {
           </div>
         </div>
         {/* Card 3 */}
-        <div className="flex items-center justify-center">
+        <div
+          className="relative flex items-center justify-center flex-col cursor-pointer"
+          onClick={() => setShowRestaurantMapModal(true)} // Open restaurant map modal on click
+        >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
             src={groceryImage}
             alt="Gallery Image 3"
           />
+          <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+            Restaurants around Singapore
+          </div>
         </div>
         {/* Card 4 */}
-        <div className="flex items-center justify-center">
+        <div
+          className="relative flex items-center justify-center flex-col cursor-pointer"
+          onClick={() => setShowGroceryMapModal(true)} // Open grocery map modal on click
+        >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
             src={restoImage}
             alt="Gallery Image 4"
           />
+          <div className="absolute bottom-2 left-2 bg-black bg-opacity-50 text-white text-xs px-2 py-1 rounded">
+            Grocery Stores around Singapore
+          </div>
         </div>
       </div>
 
@@ -299,6 +324,73 @@ const Gallery: React.FC = () => {
           </div>
         </div>
       )}
+
+      {/* Restaurant Map Modal */}
+      {showRestaurantMapModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg w-[90%] md:w-[50%] relative">
+            <h3 className="text-xl font-bold mb-4">Map Location</h3>
+            <MapContainer
+              center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
+              zoom={13}
+              scrollWheelZoom={false}
+              style={{ height: "400px", width: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <ZoomControl />
+              {restaurantList.map((restaurant, index) => (
+                <Marker key={index} position={[restaurant.lat, restaurant.lon]}>
+                  <Popup>{restaurant.name}</Popup>
+                </Marker>
+              ))}
+              <ZoomControl />
+            </MapContainer>
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              onClick={() => setShowRestaurantMapModal(false)} // Ensure this is set to correct state updater
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* Grocery Map Modal */}
+      {showGroceryMapModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg w-[90%] md:w-[50%] relative">
+            <h3 className="text-xl font-bold mb-4">Map Location</h3>
+            <MapContainer
+              center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
+              zoom={13}
+              scrollWheelZoom={false}
+              style={{ height: "400px", width: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              <ZoomControl />
+              {groceryList.map((grocery, index) => (
+                <Marker key={index} position={[grocery.lat, grocery.lon]}>
+                  <Popup>{grocery.name}</Popup>
+                </Marker>
+              ))}
+              <ZoomControl />
+            </MapContainer>
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
+              onClick={() => setShowGroceryMapModal(false)} // Ensure this is set to correct state updater
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
