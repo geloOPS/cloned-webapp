@@ -39,7 +39,7 @@ const Homepage: React.FC = () => {
   return (
     <section className="flex-1">
       <div className="px-10 pt-10 pb-4 mx-auto flex flex-col xl:flex-row gap-10">
-        <div className="basis-3/4">
+        <div className="basis-3/5">
           <HeroComponent heroText={hero.text} heroSubtext={hero.subText} />
           <ImageCarousel
             images={images}
@@ -58,7 +58,7 @@ const Homepage: React.FC = () => {
             ))}
           </div>
         </div>
-        <div className="basis-1/4">
+        <div className="basis-2/5">
           <div className="flex flex-col gap-8">
             <Gallery />
             <Ads />

@@ -164,7 +164,7 @@ const Gallery: React.FC = () => {
       <div className="grid grid-cols-2 gap-2">
         {/* Card 1 */}
         <div
-          className="relative flex items-center justify-center flex-col cursor-pointer"
+          className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
           onClick={() => setShowCurrencySelector(true)}
         >
           <img
@@ -178,7 +178,7 @@ const Gallery: React.FC = () => {
         </div>
         {/* Card 2 */}
         <div
-          className="relative flex items-center justify-center flex-col cursor-pointer"
+          className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
           onClick={() => setShowMapModal(true)} // Open map modal on click
         >
           <img
@@ -192,11 +192,11 @@ const Gallery: React.FC = () => {
         </div>
         {/* Card 3 */}
         <div
-          className="relative flex items-center justify-center flex-col cursor-pointer"
+          className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
           onClick={() => setShowRestaurantMapModal(true)} // Open restaurant map modal on click
         >
           <img
-            className="w-80 h-80 object-cover rounded-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
+            className="w-80 h-80 object-cover rounded-lg cursor-pointer"
             src={groceryImage}
             alt="Gallery Image 3"
           />
@@ -206,11 +206,11 @@ const Gallery: React.FC = () => {
         </div>
         {/* Card 4 */}
         <div
-          className="relative flex items-center justify-center flex-col cursor-pointer"
+          className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
           onClick={() => setShowGroceryMapModal(true)} // Open grocery map modal on click
         >
           <img
-            className="w-80 h-80 object-cover rounded-lg cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
+            className="w-80 h-80 object-cover rounded-lg cursor-pointer"
             src={restoImage}
             alt="Gallery Image 4"
           />
@@ -346,7 +346,6 @@ const Gallery: React.FC = () => {
                   <Popup>{restaurant.name}</Popup>
                 </Marker>
               ))}
-              <ZoomControl />
             </MapContainer>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
@@ -379,7 +378,6 @@ const Gallery: React.FC = () => {
                   <Popup>{grocery.name}</Popup>
                 </Marker>
               ))}
-              <ZoomControl />
             </MapContainer>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
