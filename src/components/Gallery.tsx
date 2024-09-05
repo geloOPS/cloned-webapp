@@ -85,8 +85,8 @@ const Gallery: React.FC = () => {
   const [exchangeRate, setExchangeRate] = useState<number | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [showCurrencySelector, setShowCurrencySelector] = useState(false);
-  const [showMapModal, setShowMapModal] = useState(false); // State for Map Modal
-  const [showRestaurantMapModal, setShowRestaurantMapModal] = useState(false); // State for Restaurant Map Modal
+  const [showMapModal, setShowMapModal] = useState(false);
+  const [showRestaurantMapModal, setShowRestaurantMapModal] = useState(false);
   const [selectedCurrency, setSelectedCurrency] = useState("PHP");
   const [currencies, setCurrencies] = useState<string[]>([]);
   const [amountSGD, setAmountSGD] = useState<number>(1);
@@ -179,7 +179,7 @@ const Gallery: React.FC = () => {
         {/* Card 2 */}
         <div
           className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
-          onClick={() => setShowMapModal(true)} // Open map modal on click
+          onClick={() => setShowMapModal(true)}
         >
           <img
             className="w-80 h-80 object-cover rounded-lg transform transition-transform duration-300 ease-in-out hover:scale-105"
@@ -193,7 +193,7 @@ const Gallery: React.FC = () => {
         {/* Card 3 */}
         <div
           className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
-          onClick={() => setShowRestaurantMapModal(true)} // Open restaurant map modal on click
+          onClick={() => setShowRestaurantMapModal(true)}
         >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer"
@@ -207,7 +207,7 @@ const Gallery: React.FC = () => {
         {/* Card 4 */}
         <div
           className="relative flex items-center justify-center flex-col cursor-pointer transform transition-transform duration-300 ease-in-out hover:scale-105"
-          onClick={() => setShowGroceryMapModal(true)} // Open grocery map modal on click
+          onClick={() => setShowGroceryMapModal(true)}
         >
           <img
             className="w-80 h-80 object-cover rounded-lg cursor-pointer"
@@ -247,7 +247,7 @@ const Gallery: React.FC = () => {
               className="mt-4 p-2 bg-gray-500 text-white rounded hover:bg-gray-700"
               onClick={() => {
                 setShowCurrencySelector(false);
-                setSearchQuery(""); // Reset search query when closing the modal
+                setSearchQuery("");
               }}
             >
               Close
@@ -283,7 +283,7 @@ const Gallery: React.FC = () => {
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
               onClick={() => {
                 setShowModal(false);
-                setSearchQuery(""); // Reset search query when closing the modal
+                setSearchQuery("");
               }}
             >
               ✕
@@ -298,7 +298,7 @@ const Gallery: React.FC = () => {
           <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
             <h3 className="text-xl font-bold mb-4">Church Location</h3>
             <MapContainer
-              center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
+              center={[1.3521, 103.8198]}
               zoom={13}
               scrollWheelZoom={false}
               style={{ height: "400px", width: "100%" }}
@@ -331,7 +331,7 @@ const Gallery: React.FC = () => {
           <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
             <h3 className="text-xl font-bold mb-4">Restaurant Location</h3>
             <MapContainer
-              center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
+              center={[1.3521, 103.8198]}
               zoom={13}
               scrollWheelZoom={false}
               style={{ height: "400px", width: "100%" }}
@@ -349,7 +349,7 @@ const Gallery: React.FC = () => {
             </MapContainer>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-              onClick={() => setShowRestaurantMapModal(false)} // Ensure this is set to correct state updater
+              onClick={() => setShowRestaurantMapModal(false)}
             >
               ✕
             </button>
@@ -363,7 +363,7 @@ const Gallery: React.FC = () => {
           <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
             <h3 className="text-xl font-bold mb-4">Grocery Store Location</h3>
             <MapContainer
-              center={[1.3521, 103.8198]} // Coordinates of Singapore (example)
+              center={[1.3521, 103.8198]}
               zoom={13}
               scrollWheelZoom={false}
               style={{ height: "400px", width: "100%" }}
@@ -381,7 +381,7 @@ const Gallery: React.FC = () => {
             </MapContainer>
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800"
-              onClick={() => setShowGroceryMapModal(false)} // Ensure this is set to correct state updater
+              onClick={() => setShowGroceryMapModal(false)}
             >
               ✕
             </button>
