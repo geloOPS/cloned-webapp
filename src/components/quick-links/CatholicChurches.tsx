@@ -18,9 +18,9 @@ L.Icon.Default.mergeOptions({
 });
 
 const CatholicChurches: React.FC = () => {
-  const [filteredChurches, setFilteredChurches] = useState<
-    { lat: number; lon: number; name: string }[]
-  >([]);
+  // const [filteredChurches, setFilteredChurches] = useState<
+  //   { lat: number; lon: number; name: string }[]
+  // >([]);
   const [showMapModal, setShowMapModal] = useState(false); // State for Map Modal
 
   return (
