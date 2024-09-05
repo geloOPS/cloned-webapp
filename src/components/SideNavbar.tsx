@@ -1,13 +1,42 @@
-// SideNavbar.tsx
-import React from "react";
+import React, { useRef, useEffect } from "react";
 
 interface SideNavbarProps {
   isOpen: boolean;
+  onClose: () => void; // Function to handle closing the sidebar
 }
 
-const SideNavbar: React.FC<SideNavbarProps> = ({ isOpen }) => {
+const SideNavbar: React.FC<SideNavbarProps> = ({ isOpen, onClose }) => {
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Function to handle clicks outside the sidebar
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+        onClose();
+      }
+    };
+
+    // Function to handle scroll
+    const handleScroll = () => {
+      if (isOpen) {
+        onClose();
+      }
+    };
+
+    // Attach event listeners
+    document.addEventListener("mousedown", handleClickOutside);
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up event listeners on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isOpen, onClose]);
+
   return (
     <div
+      ref={sidebarRef}
       className={`fixed h-full bg-[#7c3732] w-64 shadow-md z-30 transition-transform ${
         isOpen ? "translate-x-0" : "-translate-x-full"
       } lg:relative lg:translate-x-0`}
