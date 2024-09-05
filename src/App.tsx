@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import SideNavbar from "./components/SideNavbar";
 import Homepage from "./pages/Homepage";
+import 'leaflet/dist/leaflet.css';
 
 const App: React.FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
