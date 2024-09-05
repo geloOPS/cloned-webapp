@@ -44,7 +44,7 @@ const churchList = [
   { lat: 1.3076969986875737, lon: 103.77072239323924, name: "Holy Cross" },
   { lat: 1.306727964226071, lon: 103.90701778115144, name: "Holy Family" },
   { lat: 1.3545714762552408, lon: 103.83347449811693, name: "Holy Spirit" },
-  { lat: 1.3117502734293407, lon: 103.86029687613859, name: "Holy Trinity" },
+  { lat: 1.3488734760537093, lon: 103.94939599699143, name: "Holy Trinity" },
   { lat: 1.3565182513742635, lon: 103.87762459972596, name: "Immaculate Heart of Mary" },
   { lat: 1.303168846297323, lon: 103.855770139173, name: "Lady of Lourdes" },
   { lat: 1.3735240758809044, lon: 103.89854231339955, name: "Nativity of the Blessed Virgin Mary" },
