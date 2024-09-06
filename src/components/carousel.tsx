@@ -55,7 +55,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({
             alt={`Slide ${index}`}
             className={`carousel-image ${
               index === currentIndex ? "active" : ""
-            } ${transitioning ? "fade" : ""}`}
+            } ${index === currentIndex && transitioning ? "fade" : ""}`}
           />
         ))}
       </div>
