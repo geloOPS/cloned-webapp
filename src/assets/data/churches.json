@@ -224,14 +224,6 @@
         "nearest_mrt": "Ang Mo Kio (NS16)"
     },
     {
-        "lat": 1.3683094821711705,
-        "lon": 103.76731422504199,
-        "name": "Church of St. Joseph (Bukit Timah)",
-        "district": "West",
-        "address": "620 Upper Bukit Timah Road, Singapore 678116",
-        "nearest_mrt": "Hillview (DT3)"
-    },
-    {
         "lat": 1.2980313986117644,
         "lon": 103.85128520785436,
         "name": "Church of Sts. Peter and Paul",
