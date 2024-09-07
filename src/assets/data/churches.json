@@ -1,162 +1,258 @@
 [
     {
-        "lat": 1.2923774167588613,
-        "lon": 103.79640621557269,
-        "name": "Blessed Sacrament Church"
+        "lat": 1.2963642378699645,
+        "lon": 103.85103328086589,
+        "name": "Cathedral of the Good Shepherd",
+        "district": "Central",
+        "address": "A Queen Street, Singapore 188533",
+        "nearest_mrt": "Bras Basah (CC2), Bugis (EW12/DT14)"
     },
     {
-        "lat": 1.2962300619799392,
-        "lon": 103.85107740149479,
-        "name": "Cathedral of the Good Shepherd"
+        "lat": 1.321854492315537,
+        "lon": 103.84261298086577,
+        "name": "Church of St. Alphonsus (Novena Church)",
+        "district": "Central",
+        "address": "300 Thomson Road, Singapore 307653",
+        "nearest_mrt": "Novena (NS20)"
     },
     {
-        "lat": 1.3619632529992378,
-        "lon": 103.85250074397304,
-        "name": "Christ the King"
+        "lat": 1.2950151164591435,
+        "lon": 103.83026817901906,
+        "name": "Church of St. Bernadette",
+        "district": "Central",
+        "address": "12 Zion Road, Singapore 247731",
+        "nearest_mrt": "Tiong Bahru (EW17)"
     },
     {
-        "lat": 1.380544285306484,
-        "lon": 103.93611550033735,
-        "name": "Divine Mercy"
+        "lat": 1.3480734878102016,
+        "lon": 103.71116004001232,
+        "name": "Church of St. Francis of Assisi",
+        "district": "West",
+        "address": "200 Boon Lay Avenue, Singapore 649964",
+        "nearest_mrt": "Lakeside (EW26)"
     },
     {
-        "lat": 1.3076969986875737,
-        "lon": 103.77072239323924,
-        "name": "Holy Cross"
+        "lat": 1.3178542506733126,
+        "lon": 103.80570097106515,
+        "name": "Church of St. Ignatius",
+        "district": "Central",
+        "address": "120 King’s Road, Singapore 268172",
+        "nearest_mrt": "Farrer Road (CC20)"
     },
     {
-        "lat": 1.306727964226071,
-        "lon": 103.90701778115144,
-        "name": "Holy Family"
+        "lat": 1.3475545453780469,
+        "lon": 103.75935863853624,
+        "name": "Church of St. Mary of the Angels",
+        "district": "West",
+        "address": "5 Bukit Batok East Avenue 2, Singapore 659918",
+        "nearest_mrt": "Bukit Batok (NS2)"
     },
     {
-        "lat": 1.3545714762552408,
-        "lon": 103.83347449811693,
-        "name": "Holy Spirit"
+        "lat": 1.3263221025146765,
+        "lon": 103.86282457901882,
+        "name": "Church of St. Michael",
+        "district": "Central",
+        "address": "17 St. Michael’s Road, Singapore 327976",
+        "nearest_mrt": "Boon Keng (NE9)"
     },
     {
-        "lat": 1.3488734760537093,
-        "lon": 103.94939599699143,
-        "name": "Holy Trinity"
+        "lat": 1.3078471632647348,
+        "lon": 103.77077864038307,
+        "name": "Church of the Holy Cross",
+        "district": "West",
+        "address": "450 Clementi Avenue 1, Singapore 129955",
+        "nearest_mrt": "Clementi (EW23)"
     },
     {
-        "lat": 1.3565182513742635,
-        "lon": 103.87762459972596,
-        "name": "Immaculate Heart of Mary"
+        "lat": 1.3067749433281424,
+        "lon": 103.90701086083108,
+        "name": "Church of the Holy Family",
+        "district": "East",
+        "address": "6 Chapel Road, Singapore 429509",
+        "nearest_mrt": "Eunos (EW7), Dakota (CC8)"
     },
     {
-        "lat": 1.303168846297323,
-        "lon": 103.855770139173,
-        "name": "Lady of Lourdes"
+        "lat": 1.3545854587193589,
+        "lon": 103.83354477724609,
+        "name": "Church of the Holy Spirit",
+        "district": "Central",
+        "address": "248 Upper Thomson Road, Singapore 574371",
+        "nearest_mrt": "Marymount (CC16), Upper Thomson (TE8)"
     },
     {
-        "lat": 1.3735240758809044,
-        "lon": 103.89854231339955,
-        "name": "Nativity of the Blessed Virgin Mary"
+        "lat": 1.3565781635637497,
+        "lon": 103.87755600600742,
+        "name": "Church of the Immaculate Heart of Mary",
+        "district": "North-East",
+        "address": "24 Highland Road, Singapore 549115",
+        "nearest_mrt": "Kovan (NE13)"
     },
     {
-        "lat": 1.312215183627607,
-        "lon": 103.89364672504553,
-        "name": "Our Lady Queen of Peace"
+        "lat": 1.398376400869553,
+        "lon": 100.37170051154578,
+        "name": "Church of the Nativity of the BVM",
+        "district": "North-East",
+        "address": "1259 Upper Serangoon Road, Singapore 534795",
+        "nearest_mrt": "Hougang (NE14)"
     },
     {
-        "lat": 1.437331249477168,
-        "lon": 103.837590638539,
-        "name": "Our Lady Star of the Sea"
+        "lat": 1.334888772735933,
+        "lon": 103.85108221893502,
+        "name": "Church of the Risen Christ",
+        "district": "Central",
+        "address": "91 Toa Payoh Central, Singapore 319193",
+        "nearest_mrt": "Toa Payoh (NS19)"
     },
     {
-        "lat": 1.3207219585329832,
-        "lon": 103.91872735388095,
-        "name": "Our Lady of Perpetual Succour"
+        "lat": 1.312778279205705,
+        "lon": 103.79638127718458,
+        "name": "Church of St. James",
+        "district": "Central",
+        "address": "2221 Ang Mo Kio Avenue 8, Singapore 569809",
+        "nearest_mrt": "Ang Mo Kio (NS16)"
     },
     {
-        "lat": 1.3348244171902885,
-        "lon": 103.85102857476613,
-        "name": "Risen Christ"
+        "lat": 1.2960236769731457,
+        "lon": 103.84363981524147,
+        "name": "Church of the Sacred Heart",
+        "district": "Central",
+        "address": "111 Tank Road, Singapore 238069",
+        "nearest_mrt": "Dhoby Ghaut (NS24/NE6/CC1)"
     },
     {
-        "lat": 1.2959803414673563,
-        "lon": 103.84375896922955,
-        "name": "Sacred Heart"
+        "lat": 1.4295885300219442,
+        "lon": 103.77964628086556,
+        "name": "Church of St. Anthony",
+        "district": "North",
+        "address": "25 Woodlands Avenue 1, Singapore 739064",
+        "nearest_mrt": "Woodlands (NS9/TE2)"
     },
     {
-        "lat": 1.321876623323244,
-        "lon": 103.8427681842609,
-        "name": "St Alphonsus (Novena Church)"
+        "lat": 1.3684810945894825,
+        "lon": 103.7673356827125,
+        "name": "Church of St. Joseph (Bukit Timah)",
+        "district": "West",
+        "address": "620 Upper Bukit Timah Road, Singapore 678116",
+        "nearest_mrt": "Hillview (DT3)"
     },
     {
-        "lat": 1.3916533443499273,
-        "lon": 103.90172825242242,
-        "name": "St Anne's Church"
+        "lat": 1.2733570820279445,
+        "lon": 103.82816345572425,
+        "name": "Church of St. Teresa",
+        "district": "Central",
+        "address": "510 Kampong Bahru Road, Singapore 099446",
+        "nearest_mrt": "Outram Park (EW16/NE3/TE17)"
     },
     {
-        "lat": 1.4295862341669052,
-        "lon": 103.7796816675259,
-        "name": "St Anthony"
+        "lat": 1.303225599038276,
+        "lon": 103.8557924896346,
+        "name": "Church of Our Lady of Lourdes",
+        "district": "Central",
+        "address": "50 Ophir Road, Singapore 188690",
+        "nearest_mrt": "Bugis (EW12/DT14)"
     },
     {
-        "lat": 1.2951387302225514,
-        "lon": 103.83050903476018,
-        "name": "St Bernadette"
+        "lat": 1.3124136150305576,
+        "lon": 103.89358235203065,
+        "name": "Church of Our Lady Queen of Peace",
+        "district": "East",
+        "address": "4 Sandy Lane, Singapore 437321",
+        "nearest_mrt": "Paya Lebar (EW8/CC9)"
     },
     {
-        "lat": 1.3610508068247114,
-        "lon": 103.86191988635655,
-        "name": "St Francis Xavier"
+        "lat": 1.4375135822917784,
+        "lon": 103.83759063853594,
+        "name": "Church of Our Lady Star of the Sea",
+        "district": "North",
+        "address": "10 Yishun Street 22, Singapore 768579",
+        "nearest_mrt": "Yishun (NS13)"
     },
     {
-        "lat": 1.3481437677309307,
-        "lon": 103.71114322653843,
-        "name": "St Francis of Assisi"
+        "lat": 1.391821109336938,
+        "lon": 103.90178416921815,
+        "name": "St. Anne’s Church",
+        "district": "North-East",
+        "address": "66 Sengkang East Way, Singapore 548593",
+        "nearest_mrt": "Sengkang (NE16/STC)"
     },
     {
-        "lat": 1.317829944984357,
-        "lon": 103.80569644478362,
-        "name": "St Ignatius"
+        "lat": 1.2985932942312097,
+        "lon": 103.8531697133947,
+        "name": "St. Joseph’s Church (Victoria Street)",
+        "district": "Central",
+        "address": "143 Victoria Street, Singapore 188020",
+        "nearest_mrt": "Bras Basah (CC2), Bugis (EW12/DT14)"
     },
     {
-        "lat": 1.3683631110532846,
-        "lon": 103.76745369990567,
-        "name": "St Joseph's Church (Bukit Timah)"
+        "lat": 1.3823584980380972,
+        "lon": 103.87628909082974,
+        "name": "St. Vincent de Paul Church",
+        "district": "North-East",
+        "address": "301 Yio Chu Kang Road, Singapore 805910",
+        "nearest_mrt": "Ang Mo Kio (NS16), Yio Chu Kang (NS15)"
     },
     {
-        "lat": 1.2985289377485232,
-        "lon": 103.853073153881,
-        "name": "St Joseph's Church (Victoria Street)"
+        "lat": 1.3810682398800826,
+        "lon": 103.93597580947105,
+        "name": "Church of the Divine Mercy",
+        "district": "East",
+        "address": "19 Pasir Ris Street 72, Singapore 518771",
+        "nearest_mrt": "Pasir Ris (EW1)"
     },
     {
-        "lat": 1.3475009160343834,
-        "lon": 103.75936936737475,
-        "name": "St Mary of the Angels"
+        "lat": 1.3259670919733728,
+        "lon": 103.88315943853628,
+        "name": "Church of St. Stephen",
+        "district": "East",
+        "address": "30 Sallim Road, Singapore 387639",
+        "nearest_mrt": "MacPherson (CC10/DT26)"
     },
     {
-        "lat": 1.3263033687811867,
-        "lon": 103.86298932543087,
-        "name": "St Michael"
+        "lat": 1.4066700119781108,
+        "lon": 103.89994225565093,
+        "name": "Church of the Transfiguration",
+        "district": "North-East",
+        "address": "51 Punggol Central, Singapore 828725",
+        "nearest_mrt": "Punggol (NE17/PTC)"
     },
     {
-        "lat": 1.3262072727368979,
-        "lon": 103.88334837492168,
-        "name": "St Stephen"
+        "lat": 1.3620248421683416,
+        "lon": 103.85251608945948,
+        "name": "Church of Christ the King",
+        "district": "North-East",
+        "address": "2221 Ang Mo Kio Avenue 8, Singapore 569809",
+        "nearest_mrt": "Ang Mo Kio (NS16)"
     },
     {
-        "lat": 1.2733468430644859,
-        "lon": 103.82810055276921,
-        "name": "St Teresa"
+        "lat": 1.3683094821711705,
+        "lon": 103.76731422504199,
+        "name": "Church of St. Joseph (Bukit Timah)",
+        "district": "West",
+        "address": "620 Upper Bukit Timah Road, Singapore 678116",
+        "nearest_mrt": "Hillview (DT3)"
     },
     {
-        "lat": 1.3824542199269716,
-        "lon": 103.87609659535761,
-        "name": "St Vincent de Paul"
+        "lat": 1.2980313986117644,
+        "lon": 103.85128520785436,
+        "name": "Church of Sts. Peter and Paul",
+        "district": "Central",
+        "address": "225A Queen Street, Singapore 188551",
+        "nearest_mrt": "Bras Basah (CC2), Bugis (EW12/DT14)"
     },
     {
-        "lat": 1.2988802700160846,
-        "lon": 103.85324724290322,
-        "name": "Sts Peter and Paul"
+        "lat": 1.3489586831357114,
+        "lon": 103.94945566921831,
+        "name": "Church of the Holy Trinity",
+        "district": "East",
+        "address": "20 Tampines Street 11, Singapore 529455",
+        "nearest_mrt": "Tampines (EW2/DT32)"
     },
     {
-        "lat": 1.4067230522027319,
-        "lon": 103.90002734038688,
-        "name": "Transfiguration"
+        "lat": 1.4375135822917784,
+        "lon": 103.83759063853594,
+        "name": "Church of St. Louis",
+        "district": "North-East",
+        "address": "1573 Upper Serangoon Road, Singapore 534792",
+        "nearest_mrt": "Serangoon (NE12/CC13)"
     }
 ]

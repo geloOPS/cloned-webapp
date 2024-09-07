@@ -2,32 +2,28 @@ import React, { useRef, useEffect } from "react";
 
 interface SideNavbarProps {
   isOpen: boolean;
-  onClose: () => void; // Function to handle closing the sidebar
+  onClose: () => void;
 }
 
 const SideNavbar: React.FC<SideNavbarProps> = ({ isOpen, onClose }) => {
   const sidebarRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Function to handle clicks outside the sidebar
     const handleClickOutside = (event: MouseEvent) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
         onClose();
       }
     };
 
-    // Function to handle scroll
     const handleScroll = () => {
       if (isOpen) {
         onClose();
       }
     };
 
-    // Attach event listeners
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll);
 
-    // Clean up event listeners on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll);
@@ -44,7 +40,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({ isOpen, onClose }) => {
       <nav>
         <ul>
           <li className="px-6 py-2">
-            <a href="/home" className="text-gray-300 hover:text-white">
+            <a href="/" className="text-gray-300 hover:text-white">
               Home
             </a>
           </li>
@@ -55,7 +51,7 @@ const SideNavbar: React.FC<SideNavbarProps> = ({ isOpen, onClose }) => {
           </li>
           <li className="px-6 py-2">
             <a href="/services" className="text-gray-300 hover:text-white">
-              Services
+              Blogs
             </a>
           </li>
           <li className="px-6 py-2">
