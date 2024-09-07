@@ -2,7 +2,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import restaurantList from "../../assets/data/restaurants.json";
 import ZoomControl from "../ZoomControl";
@@ -19,6 +19,23 @@ L.Icon.Default.mergeOptions({
 
 const Restaurants: React.FC = () => {
   const [showRestaurantMapModal, setShowRestaurantMapModal] = useState(false); // State for Restaurant Map Modal
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setShowRestaurantMapModal(false);
+      }
+    };
+
+    if (showRestaurantMapModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showRestaurantMapModal]);
 
   return (
     <div>
@@ -39,7 +56,10 @@ const Restaurants: React.FC = () => {
       {/* Restaurant Map Modal */}
       {showRestaurantMapModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative">
+          <div
+            className="bg-white p-2 rounded-lg w-[90%] md:w-[50%] relative"
+            ref={modalRef}
+          >
             <h3 className="text-xl font-bold mb-4">Restaurant Location</h3>
             <MapContainer
               center={[1.3521, 103.8198]} // Coordinates of Singapore (example)

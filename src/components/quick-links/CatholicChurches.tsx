@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark, faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import churchList from "../../assets/data/churches.json";
 
@@ -9,6 +9,7 @@ const CatholicChurches: React.FC = () => {
   const [selectedDistrict, setSelectedDistrict] = useState<string | null>(null);
   const [openDistrict, setOpenDistrict] = useState<string | null>(null);
   const navigate = useNavigate();
+  const modalRef = useRef<HTMLDivElement>(null);
 
   const districts = Array.from(new Set(churchList.map((church) => church.district)));
 
@@ -34,6 +35,23 @@ const CatholicChurches: React.FC = () => {
     handleDistrictToggle(district);
   };
 
+  // Handle clicks outside the modal to close it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+        setShowDistrictModal(false);
+      }
+    };
+
+    if (showDistrictModal) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [showDistrictModal]);
+
   return (
     <div>
       {/* Main Card */}
@@ -54,7 +72,10 @@ const CatholicChurches: React.FC = () => {
       {/* District Selection Modal */}
       {showDistrictModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-4 rounded-lg w-[90%] md:w-[50%] relative">
+          <div
+            className="bg-white p-4 rounded-lg w-[90%] md:w-[50%] relative"
+            ref={modalRef}
+          >
             <h3 className="text-xl font-bold mb-4">Select a District</h3>
             <ul>
               {districts.map((district, idx) => (

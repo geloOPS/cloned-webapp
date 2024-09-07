@@ -59,6 +59,7 @@ const DistrictMap: React.FC = () => {
           zoom={13}
           scrollWheelZoom={false}
           style={{ height: "500px", width: "100%" }}
+          className="z-20"
         >
           <TileLayer
             attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'

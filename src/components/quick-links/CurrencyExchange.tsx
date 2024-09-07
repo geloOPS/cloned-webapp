@@ -12,6 +12,7 @@ const CurrencyExchange: React.FC = () => {
   const [showCurrencySelector, setShowCurrencySelector] = useState(false);
 
   const modalRef = useRef<HTMLDivElement>(null);
+  const currencySelectorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchCurrencies = async () => {
@@ -65,6 +66,25 @@ const CurrencyExchange: React.FC = () => {
     ? (amountSGD * exchangeRate).toFixed(2)
     : "...";
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node) &&
+        !currencySelectorRef.current?.contains(event.target as Node)
+      ) {
+        setShowModal(false);
+        setShowCurrencySelector(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div>
       <div
@@ -82,7 +102,10 @@ const CurrencyExchange: React.FC = () => {
       </div>
       {showCurrencySelector && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white p-8 rounded-lg w-96">
+          <div
+            className="bg-white p-8 rounded-lg w-96"
+            ref={currencySelectorRef}
+          >
             <h3 className="text-xl font-bold mb-4">Select a Currency</h3>
             <input
               type="text"
