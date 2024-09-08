@@ -140,7 +140,6 @@ const DistrictMap: React.FC = () => {
           value={district || ''}
           onChange={handleDistrictChange}
         >
-          <option value="">Select a District</option>
           <option value="All Churches">All Churches</option>
           {districts.map((dist, idx) => (
             <option key={idx} value={dist}>{dist}</option>
