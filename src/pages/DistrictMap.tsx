@@ -18,12 +18,7 @@ const churchIcon = L.icon({
 // Define the custom icon for the range indicator
 const rangeIndicatorIcon = L.divIcon({
   className: "range-indicator-icon",
-  html: `
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="7" r="5" stroke="red" stroke-width="2" fill="red"/>
-      <path d="M12 14C10.3431 14 9 15.3431 9 17V19H15V17C15 15.3431 13.6569 14 12 14Z" stroke="red" stroke-width="2"/>
-      <path d="M12 1C13.6569 1 15 2.34315 15 4C15 5.65685 13.6569 7 12 7C10.3431 7 9 5.65685 9 4C9 2.34315 10.3431 1 12 1Z" fill="red"/>
-    </svg>`,
+  html: `<img src='/images/pin.png' />`,
   iconSize: [40, 40],
   iconAnchor: [20, 40],
   popupAnchor: [0, -40],
