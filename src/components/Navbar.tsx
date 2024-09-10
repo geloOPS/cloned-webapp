@@ -29,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleSidebar }) => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleSidebar}
-          className="fixed right-4 top-1/2 transform -translate-y-1/2 p-4 z-40 lg:hidden"
+          className="pr-8 p-4 z-40 lg:hidden"
         >
           <span className="text-white text-2xl">
             <FontAwesomeIcon icon={faBars} />
