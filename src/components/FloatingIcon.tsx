@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";  // Import useNavigate
 
 const FloatingIcon: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,6 +9,8 @@ const FloatingIcon: React.FC = () => {
 
   const iconRef = useRef<HTMLDivElement>(null);
   const popOutRef = useRef<HTMLDivElement>(null);
+  
+  const navigate = useNavigate();  // Initialize navigate function
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -83,9 +86,7 @@ const FloatingIcon: React.FC = () => {
               <button
                 className="text-sm text-blue-600"
                 onClick={() => {
-                  setIsLoggedIn(true);
-                  console.log("User signed in");
-                  // Backend sign-in logic
+                  navigate("/login");  // Redirect to the login page
                 }}
               >
                 Sign In

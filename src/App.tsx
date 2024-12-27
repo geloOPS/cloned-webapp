@@ -4,7 +4,8 @@ import SideNavbar from "./components/SideNavbar";
 import Homepage from "./pages/Homepage";
 import CatholicChurches from "./components/quick-links/CatholicChurches";
 import DistrictMap from "./pages/DistrictMap";
-import FloatingIcon from "./components/FloatingIcon"; // Import FloatingIcon
+import FloatingIcon from "./components/FloatingIcon";
+import LoginPage from "./pages/LoginPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import 'leaflet/dist/leaflet.css';
 
@@ -44,6 +45,7 @@ const App: React.FC = () => {
               <Route path="/" element={<Homepage />} />
               <Route path="/catholic-churches" element={<CatholicChurches />} />
               <Route path="/district-map" element={<DistrictMap />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
           </main>
         </div>
